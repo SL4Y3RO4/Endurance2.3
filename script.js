@@ -21,7 +21,7 @@
     let lastFrameTime;
     let sound;
     let cursor;
-    const cursorSize = 30;
+    const cursorSize = 10;
     let SnStartcommand;
     let Rcommand;
     let rgb;
@@ -79,7 +79,7 @@
 
     function makeCursor() { 
     cursor = new PIXI.Graphics();
-    cursor.beginFill(0x0d0d0d); //then black:0x0d0d0d
+    cursor.beginFill(0xffffff); //then black:0x0d0d0d
     cursor.drawCircle(0, 0, cursorSize);
     cursor.endFill();
     cursor.x = Math.random() * (app.renderer.width - 2 * cursorSize) + cursorSize;
