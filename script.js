@@ -48,13 +48,13 @@
     SnStartcommand.position.set(10, 120);
     app.stage.addChild(SnStartcommand);
 
-    rgb = [0xffffff, 0x0d0d0d];
+    /*rgb = [0xffffff, 0x0d0d0d];
     n = prompt("0:white, 1:black");
-
+    */
     function spawnTarget() {
 
     target = new PIXI.Graphics();
-    target.beginFill(rgb[n]); //then black:0x0d0d0d
+    target.beginFill(0xffffff); //then black:0x0d0d0d
     target.drawCircle(0, 0, targetSize);
     target.endFill();
     target.x = Math.random() * (app.renderer.width - 2 * targetSize) + targetSize;
