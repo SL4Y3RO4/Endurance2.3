@@ -77,6 +77,28 @@
     increaseSeconds();
     }
 
+    function makeCursor() { 
+    cursor = new PIXI.Graphics();
+    cursor.beginFill(0x0d0d0d); //then black:0x0d0d0d
+    cursor.drawCircle(0, 0, cursorSize);
+    cursor.endFill();
+    cursor.x = Math.random() * (app.renderer.width - 2 * cursorSize) + cursorSize;
+    cursor.y = Math.random() * (app.renderer.height - 2 * cursorSize) + cursorSize;
+    cursor.interactive = true;
+    cursor.buttonMode = true;
+    app.stage.addChild(cursor);
+    }
+    makeCursor();
+    
+    //cursor
+    document.addEventListener("mousemove", followPointer);
+    function followPointer(e) {
+        let x2 = e.clientX;
+        let y2 = e.clientY;
+        cursor.x = x2;
+        cursor.y = y2;
+    }
+
     //collision
     function collision() {
 
